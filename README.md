@@ -20,9 +20,23 @@
 
 ---
 
-## Install via Agent
+## Installation
 
-**The fastest way.** Paste this into your OpenClaw agent chat (Telegram, Discord, etc.):
+### One-liner (any agent)
+
+```bash
+npx skills add watchdealer-pavel/framer-manager-skill
+```
+
+Works with Claude Code, OpenClaw, Cursor, Codex, Windsurf, Roo Code, and [37 more agents](https://skills.sh).
+
+After installing, you still need to configure your Framer API key and project URL — see [setup](#getting-your-framer-api-key) below.
+
+---
+
+### Install via Agent
+
+**Paste this into your OpenClaw agent chat** (Telegram, Discord, etc.):
 
 ```
 Install the Framer Manager skill:

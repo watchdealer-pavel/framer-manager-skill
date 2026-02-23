@@ -1,13 +1,12 @@
 ---
 name: framer-manager
 description: >
-  Manage Framer sites programmatically — CMS collections, content publishing, SEO custom code,
-  redirects, deployments, pages, screenshots, and asset uploads. Use when asked to manage
-  QuestionBase or any Framer-hosted site: post content, manage CMS items, inject SEO tags,
+  Manage Framer sites programmatically via the Server API — CMS collections, content publishing,
+  SEO custom code injection, redirects, deployments, pages, screenshots, and asset uploads.
+  Use when asked to manage any Framer-hosted site: post content, manage CMS items, inject SEO tags,
   handle redirects, publish/deploy changes, upload images, or audit pages.
-  Do NOT use for non-Framer sites (chronotimepieces.com, chronoteka.com use different stacks).
-  Do NOT use for visual design/layout editing — API cannot do drag-and-drop operations.
-  Do NOT use for domain configuration beyond deploying to existing domains.
+  Do NOT use for non-Framer sites. Do NOT use for visual design/layout editing — API cannot do
+  drag-and-drop operations. Do NOT use for domain configuration beyond deploying to existing domains.
 ---
 
 ## When NOT to use this skill
