@@ -1,0 +1,9 @@
+{
+  "name": "framer-manager",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "framer-api": "^0.1.1"
+  }
+}

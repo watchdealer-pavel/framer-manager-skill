@@ -1,0 +1,7 @@
+{
+  "projectUrl": "https://framer.com/projects/YourProject--xxxxx",
+  "apiKeyFile": "~/.openclaw/workspace/skills/framer-manager/config/.framer-api-key",
+  "defaultCollection": "Blog Posts",
+  "autoPublish": false,
+  "autoDeploy": false
+}
