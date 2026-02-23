@@ -47,21 +47,22 @@ A collection of Node.js scripts that wrap the [Framer Server API](https://www.fr
 **The fastest way.** Paste this into your OpenClaw agent chat (Telegram, Discord, etc.):
 
 ```
-Install the Framer Manager skill so you can manage my Framer site programmatically.
+Install the Framer Manager skill:
 
-1. Clone https://github.com/watchdealer-pavel/framer-manager-skill.git into your skills directory (~/.openclaw/workspace/skills/framer-manager/)
-2. Run npm install in the skill directory
-3. Copy config/framer-config.example.json → config/framer-config.json
-4. Ask me for my Framer API key and project URL to complete the setup
+git clone https://github.com/watchdealer-pavel/framer-manager-skill.git ~/.openclaw/workspace/skills/framer-manager
+cd ~/.openclaw/workspace/skills/framer-manager && npm install
+cp config/framer-config.example.json config/framer-config.json
 
-The skill gives you scripts for CMS management, SEO code injection, redirects, publishing, screenshots, and image uploads. All scripts are in the scripts/ directory — read SKILL.md for the full reference.
+Then ask me for:
+1. My Framer project URL (I'll get it from framer.com → right-click project → Copy Link)
+2. My Framer API key (I'll get it from Site Settings → General → API Keys → Generate)
+
+Save the API key to config/.framer-api-key and put the project URL in config/framer-config.json.
+Test the connection by running: node scripts/list_collections.js
+Read SKILL.md for full usage reference.
 ```
 
-Your agent will clone it, install deps, and ask you for the two things it needs:
-1. **Your Framer project URL** (see [how to get it](#getting-your-framer-project-url))
-2. **Your Framer API key** (see [how to get it](#getting-your-framer-api-key))
-
-Once you provide those, the agent saves them to config and you're live.
+That's it. Your agent handles the rest — you just hand over the two credentials when asked.
 
 ---
 
