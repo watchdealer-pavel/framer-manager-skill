@@ -20,28 +20,6 @@
 
 ---
 
-## What is this?
-
-A collection of Node.js scripts that wrap the [Framer Server API](https://www.framer.com/developers/server-api-introduction) (`framer-api` v0.1.1) to manage Framer websites without touching the GUI.
-
-**What you can do:**
-- 📝 Create, update, and delete CMS collection items (blog posts, pages, etc.)
-- 🏗️ Create collections and manage field schemas
-- 🔍 Inject custom SEO code (`<head>`, `<body>` — structured data, meta tags, tracking)
-- 🔀 Manage redirects programmatically
-- 🚀 Publish previews and deploy to production
-- 📸 Take screenshots of any page/node
-- 🎨 Audit color and text styles
-- 🖼️ Upload images for CMS use
-
-**What you can't do** (Framer API limitations):
-- Visual drag-and-drop layout editing
-- Domain configuration (can deploy to existing domains only)
-- Page-level SEO settings on static (non-CMS) pages
-- Modify animations, interactions, or hover states
-
----
-
 ## Install via Agent
 
 **The fastest way.** Paste this into your OpenClaw agent chat (Telegram, Discord, etc.):
@@ -63,6 +41,28 @@ Read SKILL.md for full usage reference.
 ```
 
 That's it. Your agent handles the rest — you just hand over the two credentials when asked.
+
+---
+
+## What is this?
+
+A collection of Node.js scripts that wrap the [Framer Server API](https://www.framer.com/developers/server-api-introduction) (`framer-api` v0.1.1) to manage Framer websites without touching the GUI.
+
+**What you can do:**
+- 📝 Create, update, and delete CMS collection items (blog posts, pages, etc.)
+- 🏗️ Create collections and manage field schemas
+- 🔍 Inject custom SEO code (`<head>`, `<body>` — structured data, meta tags, tracking)
+- 🔀 Manage redirects programmatically
+- 🚀 Publish previews and deploy to production
+- 📸 Take screenshots of any page/node
+- 🎨 Audit color and text styles
+- 🖼️ Upload images for CMS use
+
+**What you can't do** (Framer API limitations):
+- Visual drag-and-drop layout editing
+- Domain configuration (can deploy to existing domains only)
+- Page-level SEO settings on static (non-CMS) pages
+- Modify animations, interactions, or hover states
 
 ---
 
