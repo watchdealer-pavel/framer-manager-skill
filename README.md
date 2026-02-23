@@ -11,10 +11,10 @@
 </p>
 
 <p align="center">
-  <a href="#quick-start">Quick Start</a> •
+  <a href="#install-via-agent">Install via Agent</a> •
+  <a href="#getting-your-framer-api-key">Get API Key</a> •
+  <a href="#manual-installation">Manual Install</a> •
   <a href="#scripts">Scripts</a> •
-  <a href="#openclaw-integration">OpenClaw Integration</a> •
-  <a href="#manual-usage">Manual Usage</a> •
   <a href="#field-types">Field Types</a>
 </p>
 
@@ -42,7 +42,60 @@ A collection of Node.js scripts that wrap the [Framer Server API](https://www.fr
 
 ---
 
-## Quick Start
+## Install via Agent
+
+**The fastest way.** Paste this into your OpenClaw agent chat (Telegram, Discord, etc.):
+
+```
+Install the Framer Manager skill so you can manage my Framer site programmatically.
+
+1. Clone https://github.com/watchdealer-pavel/framer-manager-skill.git into your skills directory (~/.openclaw/workspace/skills/framer-manager/)
+2. Run npm install in the skill directory
+3. Copy config/framer-config.example.json → config/framer-config.json
+4. Ask me for my Framer API key and project URL to complete the setup
+
+The skill gives you scripts for CMS management, SEO code injection, redirects, publishing, screenshots, and image uploads. All scripts are in the scripts/ directory — read SKILL.md for the full reference.
+```
+
+Your agent will clone it, install deps, and ask you for the two things it needs:
+1. **Your Framer project URL** (see [how to get it](#getting-your-framer-project-url))
+2. **Your Framer API key** (see [how to get it](#getting-your-framer-api-key))
+
+Once you provide those, the agent saves them to config and you're live.
+
+---
+
+## Getting Your Framer Project URL
+
+1. Go to [framer.com](https://framer.com) and log in
+2. Find your project in the dashboard
+3. **Right-click** the project thumbnail → **Copy Link**
+4. You'll get something like: `https://framer.com/projects/MySite--a1b2c3d4e5`
+
+That's your project URL.
+
+---
+
+## Getting Your Framer API Key
+
+API keys are generated per-project and authenticate as the user who created them.
+
+1. Open your project in Framer
+2. Click the **⚙️ gear icon** (top-right) to open **Site Settings**
+3. Go to the **General** section
+4. Scroll down to **API Keys**
+5. Click **Generate** to create a new key
+6. **Copy the key immediately** — it won't be shown again
+
+> ⚠️ **Keep this key secure.** It has full access to your project. Don't commit it to git, don't share it publicly. Store it in a password manager or a local file that's gitignored.
+
+> 💡 **During beta, the Server API is free.** Framer plans to charge per-use eventually with a monthly free allowance. A full hour of processing will likely cost a few dollars.
+
+---
+
+## Manual Installation
+
+If you're not using OpenClaw, or prefer to set things up yourself:
 
 ### 1. Clone
 
@@ -75,17 +128,15 @@ Edit `config/framer-config.json`:
 }
 ```
 
-**Where to get these:**
-- **Project URL**: In Framer, right-click your project → Copy Link
-- **API Key**: Site Settings → General → API Keys → Generate
-
 ### 4. Save your API key
 
 ```bash
 echo "your-api-key-here" > config/.framer-api-key
 ```
 
-> The `.framer-api-key` file is gitignored and never committed.
+> This file is gitignored and never committed.
+
+Alternatively, set the `FRAMER_API_KEY` environment variable instead of using a file.
 
 ### 5. Test
 
@@ -152,26 +203,9 @@ Run from the repo root: `node scripts/<script>.js [args]`
 
 ## OpenClaw Integration
 
-### As an OpenClaw Skill
+### Agent Instructions (Optional)
 
-Copy or symlink this repo into your OpenClaw skills directory:
-
-```bash
-# Option A: Clone directly into skills
-git clone https://github.com/watchdealer-pavel/framer-manager-skill.git \
-  ~/.openclaw/workspace/skills/framer-manager
-
-# Option B: Symlink from wherever you cloned it
-ln -s /path/to/framer-manager-skill ~/.openclaw/workspace/skills/framer-manager
-
-cd ~/.openclaw/workspace/skills/framer-manager && npm install
-```
-
-Then set up your config and API key as described in [Quick Start](#quick-start).
-
-### Agent Instructions
-
-Paste this into your agent's system prompt or `AGENTS.md` to teach it how to use the skill:
+If your agent doesn't automatically discover the skill via `SKILL.md`, paste this into your `AGENTS.md` or system prompt:
 
 ```markdown
 ## Framer Manager Skill
