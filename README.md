@@ -90,11 +90,22 @@ You need two things from Framer:
 
 ## Quick Example
 
-```bash
-# Add a blog post
-node scripts/add_item.js "Blog" "hello-world" '{"Title":"Hello World","Content":{"value":"# Hello","contentType":"markdown"}}'
+Just tell your agent what you want:
 
-# Publish to production
+> **You:** Publish a new blog post on my Framer site about AI agents. Title it "Why AI Agents Will Run Your Website by 2027". Make it engaging, add some stats, and deploy it live.
+
+Your agent will:
+1. Run `list_collections.js` to find your blog collection and field schema
+2. Write the article content in markdown
+3. Run `add_item.js` to create the CMS entry
+4. Run `publish.js --deploy` to push it live
+
+That's it — article goes from idea to live URL in one conversation.
+
+Or run it manually:
+
+```bash
+node scripts/add_item.js "Blog" "ai-agents-2027" '{"Title":"Why AI Agents Will Run Your Website by 2027","Content":{"value":"# The Age of AI Agents\n\nBy 2027, most websites will be managed by autonomous agents...","contentType":"markdown"}}'
 node scripts/publish.js --deploy
 ```
 
