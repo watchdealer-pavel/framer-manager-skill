@@ -29,8 +29,9 @@ const outFile = getArg("--out");
 if (outFile) {
   const resolved = resolve(process.cwd(), outFile);
   const cwd = process.cwd();
-  if (!resolved.startsWith(cwd) && !resolved.startsWith("/tmp")) {
-    console.error("Output path must be within current directory or /tmp.");
+  const home = process.env.HOME || "/home/max";
+  if (!resolved.startsWith(cwd) && !resolved.startsWith(home)) {
+    console.error("Output path must be within current directory or home.");
     process.exit(1);
   }
 }
